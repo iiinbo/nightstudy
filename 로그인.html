@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="로그인.css" />
+    <title>인스타그램 로그인페이지</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="logo">
+        <img src="실습과제 이미지/logo.PNG" alt="로고" /><a href="#"></a>
+      </header>
+      <form method="post" action="">
+        <label
+          >아이디<input
+            class="id"
+            type="id"
+            name="userid"
+            placeholder="아이디 입력"
+        /></label>
+        <label
+          >비밀번호<input
+            class="pw"
+            type="password"
+            name="userpw"
+            placeholder="6~12자리 이하 영문/숫자 입력"
+        /></label>
+        <label class="checkbox">
+          <input type="checkbox" />아이디 저장하기</label
+        >
+
+        <button type="button" class="loginBtn" />Login</button>
+      </form>
+      <footer>비밀번호가 기억나지 않는다면?<button onclick="popup()">변경</button>
+      <script>
+        function popup() {
+          window.open(`https://ko-kr.facebook.com/help/instagram/129844100551729`,`팝업`,`width=500, height=800`)
+        }
+      </script>
+      </footer>
+    </div>
+    <script src="로그인.js"></script>
+    <script src="이벤트적용.js"></script>
+  </body>
+</html>

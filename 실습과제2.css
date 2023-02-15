@@ -1,0 +1,838 @@
+* {
+  text-decoration: none;
+  list-style: none;
+} /* 페이지 전체에 링크 밑줄 없앰 */
+
+/* 왼쪽 영역, 네비게이션 바 */
+nav {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  background-color: white;
+  color: black;
+  border-right: solid;
+  border-color: rgba(164, 161, 161, 0.692); /* 오른쪽 선 실선 및 색상지정 */
+  border-right-width: 1.5px;
+} /* 오른쪽 선 굵기지정 */
+
+.logo {
+  width: 70%;
+  margin: 10px 10px;
+}
+.navlist > li:hover {
+  background-color: rgba(241, 12, 138, 0.392);
+  border-radius: 40px;
+  width: 80%;
+  height: 10%;
+}
+ul.navlist {
+  width: 100%;
+  line-height: 2cm;
+  font-size: 18px;
+  padding: 0px 0 0 20px;
+  color: black;
+  table-layout: fixed;
+}
+
+.navlist img {
+  width: 15%;
+  height: 15%;
+  margin-left: 15px;
+  margin-right: 20px;
+}
+.inbo {
+  width: 20%;
+  height: 20%;
+  border-radius: 50px;
+}
+.navlist li a {
+  width: 80%;
+  color: black;
+}
+.navlist li {
+  width: 90%;
+  display: flex;
+  justify-content: center; /* 요 3가지를 함께 해주어야 둘레간격동일 가운데정렬 */
+  align-items: center;
+  text-align: left;
+}
+/* 라이트박스 */
+#lightbox {
+  z-index: 12;
+  position: absolute; /* 화면 꽉차게, 그리고 맨 앞으로 */
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  background-color: rgba(54, 54, 54, 0.8);
+  transition: all 0.3s linear;
+}
+#lightboximg {
+  display: block;
+  width: 30%;
+  height: 100%; /* 조정필요 */
+  margin-left: 50%;
+  position: absolute;
+  align-items: center; /* 가운데정렬인데 안옴.. */
+  top: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgb(21, 21, 21);
+  border-radius: 70%;
+  overflow: hidden;
+} /* 사진의 테두리 완곡한 표현주기 */
+
+/* 컨테이너 플렉스로 정렬(가로나열이 기본임) */
+.container {
+  display: flex;
+  margin-top: -5px;
+  background-color: rgba(219, 216, 216, 0.092);
+} /* 방식 */
+.left {
+  width: 15%;
+  position: fixed;
+}
+.center {
+  width: 85%;
+  margin-left: 20%;
+}
+
+/* 가운데 영역 중 상단 */
+header {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+section {
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 1.5px solid;
+  border-color: rgba(164, 161, 161, 0.692);
+} /* 박스 실선 & 굵기 함께 표기가능 */
+.top1 {
+  width: 100%;
+  align-items: center;
+  margin: 0 0 5px 5px;
+  display: flex; /* 요 3가지를 함께 해주어야 둘레간격동일 가운데정렬 */
+  justify-content: center; /* 요 3가지를 함께 해주어야 둘레간격동일 가운데정렬 */
+  align-items: center; /* 요 3가지를 함께 해주어야 둘레간격동일 가운데정렬 */
+  flex-direction: column; /* !이걸해주면 세로(콜론)로 변환~ */
+}
+
+.top img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 10px 0 0 0;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.top .nickname {
+  width: 70%;
+  color: black;
+  font-size: small;
+  text-align: center;
+}
+
+/* 가운데 영역 중 하단 게시글을 작성한 본인의 계정 */
+.middle {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  text-align: left;
+}
+
+.middle1 img {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 70px;
+}
+
+.middle .nickname2 {
+  width: 80%;
+  margin-left: 15px;
+  color: black;
+  font-size: medium; /* 닉네임 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+.middlemore {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+}
+.middlemore img {
+  width: 40px;
+  height: 40px;
+} /* '...' 그림 위치 조정 */
+
+.buttons {
+  display: flex;
+
+  align-items: center;
+  width: 100%;
+}
+.button {
+  display: flex;
+  width: 90%;
+}
+
+.button img {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  cursor: pointer;
+} /* 좋아요부터 차례로 아이콘 */
+
+.bookmark {
+  width: 10%;
+  display: flex;
+  justify-content: center; /* 요 3가지를 함께 해주어야 둘레간격동일 가운데정렬 */
+  align-items: center;
+}
+.bookmark img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+} /* 북마크 그림 수기이동 */
+.lovelove {
+  cursor: pointer;
+}
+.letter4 img {
+  width: 25px;
+  height: 25px; /* 스마일 그림 */
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.letter4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 5px;
+} /* 맨 하단 댓글달기를 플렉스로 정렬 후 나란히 정렬 */
+
+.letter4 .comment {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 85%;
+  font-weight: lighter;
+  font-size: 16px;
+  color: gray;
+  font-weight: bold;
+  margin-left: 10px;
+} /* 댓글달기 텍스트 디자인 */
+
+.letter4 .send {
+  width: 50px;
+  margin-left: 50px;
+  color: rgba(0, 115, 255, 0.836);
+  font-size: 16px;
+  font-weight: bold;
+} /* 게시글씨 수기로 옮기기 */
+
+/* 가운데 영역 중 게시글 작성공간 박스! */
+.mainbox {
+  background-color: white;
+  width: 100%;
+  height: 100%; /* 가운데 중간 박스영역을 수기로 밑에까지 연장함 */
+  margin: 20px 0 0 0;
+
+  border-radius: 10px;
+  border: 1.5px solid;
+  border-color: rgba(164, 161, 161, 0.692);
+}
+
+.letter1 {
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 5px 0px 5px;
+  width: 100%; /* 게시내용 작성구간 전체 큰박스 */
+  height: auto;
+  line-height: 2em;
+} /* 줄간격 */
+.good {
+  width: 100%;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.letter2 {
+  display: flex;
+  justify-content: left;
+  margin-left: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.letter3 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-left: 10px;
+} /* 상대댓글과 작은하트 나란히 정렬 */
+
+/* 슬라이드 css 시작 */
+
+.myslide,
+.myslide2 {
+  width: 560px;
+  height: 551px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.myslide input[type="radio"] {
+  display: none;
+}
+.myslide2 input[type="radio"] {
+  display: none;
+}
+ul.imgs {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul.imgs2 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.my img,
+.myslide img,
+.myslide2 img {
+  width: 560px;
+  height: 551px;
+} /* 게시물사진 사이즈 조절 */
+
+ul.imgs li {
+  position: absolute;
+  left: 0px;
+  transition-delay: 1s;
+  padding: 0;
+  margin: 0;
+}
+
+ul.imgs2 li {
+  position: absolute;
+  left: 0px;
+  transition-delay: 1s;
+  padding: 0;
+  margin: 0;
+}
+.bullets {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  z-index: 2;
+}
+.bullets2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  z-index: 2;
+}
+.bullets label {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.bullets2 label {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* 2. 선택된 불릿 배경 흰색으로 구분 표시 */
+.myslide2
+  input[type="radio"]:nth-child(1):checked
+  ~ .bullets2
+  > label:nth-child(1) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(2):checked
+  ~ .bullets2
+  > label:nth-child(2) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(3):checked
+  ~ .bullets2
+  > label:nth-child(3) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(4):checked
+  ~ .bullets2
+  > label:nth-child(4) {
+  background-color: #fff;
+}
+
+.myslide2
+  input[type="radio"]:nth-child(5):checked
+  ~ .bullets2
+  > label:nth-child(5) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(6):checked
+  ~ .bullets2
+  > label:nth-child(6) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(7):checked
+  ~ .bullets2
+  > label:nth-child(7) {
+  background-color: #fff;
+}
+.myslide2
+  input[type="radio"]:nth-child(8):checked
+  ~ .bullets2
+  > label:nth-child(8) {
+  background-color: #fff;
+}
+
+/* 1 */
+.myslide
+  input[type="radio"]:nth-child(1):checked
+  ~ .bullets
+  > label:nth-child(1) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(2):checked
+  ~ .bullets
+  > label:nth-child(2) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(3):checked
+  ~ .bullets
+  > label:nth-child(3) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(4):checked
+  ~ .bullets
+  > label:nth-child(4) {
+  background-color: #fff;
+}
+
+.myslide
+  input[type="radio"]:nth-child(5):checked
+  ~ .bullets
+  > label:nth-child(5) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(6):checked
+  ~ .bullets
+  > label:nth-child(6) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(7):checked
+  ~ .bullets
+  > label:nth-child(7) {
+  background-color: #fff;
+}
+.myslide
+  input[type="radio"]:nth-child(8):checked
+  ~ .bullets
+  > label:nth-child(8) {
+  background-color: #fff;
+}
+
+/* 애니메이션 1*/
+.myslide input[type="radio"]:nth-child(1):checked ~ ul.imgs > li:nth-child(1) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(2):checked ~ ul.imgs > li:nth-child(2) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(3):checked ~ ul.imgs > li:nth-child(3) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(4):checked ~ ul.imgs > li:nth-child(4) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(5):checked ~ ul.imgs > li:nth-child(5) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(6):checked ~ ul.imgs > li:nth-child(6) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(7):checked ~ ul.imgs > li:nth-child(7) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide input[type="radio"]:nth-child(8):checked ~ ul.imgs > li:nth-child(8) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+/* 애니메이션 2*/
+.myslid2 input[type="radio"]:nth-child(1):checked ~ ul.imgs2 > li:nth-child(1) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(2):checked
+  ~ ul.imgs2
+  > li:nth-child(2) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(3):checked
+  ~ ul.imgs2
+  > li:nth-child(3) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(4):checked
+  ~ ul.imgs2
+  > li:nth-child(4) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(5):checked
+  ~ ul.imgs2
+  > li:nth-child(5) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(6):checked
+  ~ ul.imgs2
+  > li:nth-child(6) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(7):checked
+  ~ ul.imgs2
+  > li:nth-child(7) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.myslide2
+  input[type="radio"]:nth-child(8):checked
+  ~ ul.imgs2
+  > li:nth-child(8) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+/* 슬라이드끝 */
+.letter2 .nickname3,
+.letter3 .nickname3 {
+  color: black;
+  font-size: medium; /* 게시글에서 속해있는 닉네임 2종 한번에 스타일 지정 */
+  font-weight: bold;
+}
+
+.letter .show {
+  font-weight: bolder;
+  font-size: 16px;
+  width: 0;
+  margin-left: 0px;
+} /* 내가작성한 내용과 상대가 작성한 댓글문구 */
+
+.letter2 .show {
+  width: 65%;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.letter3 .show {
+  font-weight: bold;
+  font-size: 14px;
+  width: 70%;
+  margin-left: 5px;
+} /* 내가작성한 내용과 상대가 작성한 댓글문구 */
+
+.more {
+  font-weight: lighter;
+  width: 60px;
+  font-size: 14px;
+  color: rgb(164, 161, 161);
+  font-weight: bold;
+  margin-left: 2px;
+} /* 더보기 */
+
+.comment {
+  height: 100%;
+  height: 35px;
+  font-weight: lighter;
+  font-size: 14px;
+  color: rgb(164, 161, 161);
+  font-weight: bold;
+  margin-left: 10px;
+} /* 댓글 모두보기 */
+
+.letter3 img {
+  width: 20px;
+  height: 20px;
+} /* 작은하트 */
+
+.date {
+  width: 100%;
+  font-weight: lighter;
+  font-size: 12px;
+  color: rgb(164, 161, 161);
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* 밑에 오른쪽영역(7가지) 다시작성 */
+/* outline은 여섯개 박스를 모두 아우름 */
+.outline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+
+  /* 스크롤 내려도 보이게 고정 */
+  width: 40%;
+  margin-top: 10px;
+}
+/* 상단 나의 프로필 */
+.out {
+  display: flex;
+  justify-content: space-between; /* 가장 바깥에 있는 박스 정렬 */
+  width: 70%;
+  height: 60%;
+  align-items: center;
+} /* 매우중요! 위로 쏠린 닉네임/이름 줄간격을 가운데로 배치 */
+.photo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center; /* 매우중요! 센터&센터 두갤 같이 줘야 가운데로 모임 */
+  align-items: center;
+}
+.in1 {
+  display: flex;
+  justify-content: space-between; /* 사진하고 텍스트 박스 정렬 */
+  width: 230px;
+  height: 15%;
+  align-items: center;
+}
+
+.out .in1 img {
+  width: 90%;
+  height: 90%;
+  border-radius: 70%;
+} /* 프로필 사진 크기 조절 */
+
+.text {
+  width: 180px;
+  margin-left: 5px;
+}
+
+.nickname {
+  width: 100%;
+  margin-left: 5px;
+  color: black;
+  font-size: medium; /* 닉네임 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+
+.realname {
+  width: 100%;
+  margin-left: 5px;
+  color: gray;
+  font-size: small; /* 진짜 이름 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+
+.fbutton {
+  width: 100px;
+  text-align: right;
+  color: rgba(0, 115, 255, 0.836);
+  font-size: 14px;
+  font-weight: bold;
+} /* 팔로우 글씨 디자인 */
+.fbutton:hover {
+  cursor: pointer;
+  color: rgb(34, 34, 111);
+}
+
+/* 중간 */
+.out2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 30px;
+}
+
+.info2 {
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 10px;
+  text-align: left;
+  color: gray;
+  font-size: 14px; /* 회원님을 위한 추천 , 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+.info3 {
+  width: 60px;
+
+  text-align: right;
+  color: black;
+  font-size: 12px; /* 모두보기 , 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+.info3:hover {
+  cursor: pointer;
+  color: rgb(34, 34, 111);
+}
+/* 하단 */
+.out3 {
+  display: flex;
+  justify-content: space-between; /* 가장 바깥에 있는 박스 정렬 */
+  width: 70%;
+  height: 60px;
+  align-items: center;
+} /* 매우중요! 위로 쏠린 닉네임/이름 줄간격을 가운데로 배치 */
+
+.out3 .in1 img {
+  width: 45px;
+  height: 45px;
+} /* 사진 크기 조절 */
+
+.out3 .nickname {
+  width: 100%;
+  margin-left: 5px;
+  color: black;
+  font-size: medium; /* 닉네임 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+
+.out3 .realname {
+  width: 100%;
+  margin-left: 5px;
+  color: gray;
+  font-size: 10px; /* 진짜 이름 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+.box {
+  border-radius: 70px;
+  cursor: pointer; /* 커서올리면 손모양 */
+}
+
+/* 참조 */
+
+.simple {
+  margin-left: 5px;
+  color: rgba(128, 128, 128, 0.411);
+  font-size: 7px; /* 참조글씨 스타일 지정하고 크기 */
+  font-weight: bold;
+  line-height: 2.2em;
+  cursor: pointer;
+}
+
+.last {
+  display: flex;
+  flex-direction: column;
+  /* 참조.수직으로 정렬하기 (콜론) */
+  width: 70%;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.simple {
+  display: flex;
+  flex-direction: row; /* 참조 첫번째 줄.수평으로 정렬 */
+  flex-wrap: wrap; /* 참조 넓이 지정해서 그 넓이를 텍스트가 넘어가면 다음줄로 이동! */
+  width: 290px;
+}
+
+.year {
+  width: 70%;
+  margin-left: 5px;
+  color: rgba(128, 128, 128, 0.411);
+  font-size: 7px; /* 참조 두번째줄. 스타일 지정하고 크기 */
+  font-weight: bold;
+}
+/* 스크롤 */
+.scroll {
+  width: 75%;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.scroll img {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+.scroll_st {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: none;
+  position: fixed; /* 스크롤을 내려도 고정되게하는 기능 */
+}
